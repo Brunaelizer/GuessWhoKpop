@@ -1,0 +1,44 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+#game-table{
+    width: 1000px;
+    height: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#card-selected{
+    padding-top: 20px;
+    width: 150px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    width: 150px;
+    height: 180px;
+    background-repeat: no-repeat;
+	background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagem{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+button .img-disabled{
+	opacity: 0.1;
+}
+
+button .img-selected-disabled{
+	opacity: 0;
+}

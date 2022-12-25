@@ -1,0 +1,56 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-table" id="game-table">
+    </div>
+    <div id="card-selected">
+        <button class="card"><img id="img-selected" class="imagem img-selected" src=""></button>
+    </div>
+</body>
+<script>
+$(document).ready(function() {
+
+    var table = $("#game-table");
+    var row = "";
+    var index_card = 0;
+    for (let i = 0; i < 4; i++) {
+        row = "<div clas='row'>"
+        for (let j = 0; j < 6; j++) {
+            
+            var card = "./assets/cards/Card"+ index_card + ".png"
+            row += "<button class='card'><img class='imagem' src='"+card+"'></button>"
+            index_card ++;
+        }
+        row+="</div>"
+        table.append(row)
+    }
+
+
+	
+	$(".card").on("click", function(){
+        var imagem = $(this).children("img");
+        if(imagem.hasClass("img-selected")){
+            if (imagem.hasClass("img-selected-disabled")){
+                imagem.removeClass("img-selected-disabled");
+            }else{
+                imagem.addClass("img-selected-disabled");
+            }
+        }else{
+            if (imagem.hasClass("img-disabled")){
+                imagem.removeClass("img-disabled");
+            }else{
+                imagem.addClass("img-disabled");
+            }
+        }
+
+	});
+
+    var numero = Math.floor(Math.random() * 23);
+    var path = "./assets/cards/Card"+ numero + ".png"
+    $("#img-selected").attr("src",path);
+
+
+});
+</script>
